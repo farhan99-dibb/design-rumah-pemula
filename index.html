@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Desain Rumah</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>🏡 Desain Rumah Sederhana</h1>
+
+  <div class="controls">
+    <label>Ukuran Ruangan:
+      <select id="room-size" onchange="changeSize()">
+        <option value="small">Kecil</option>
+        <option value="medium" selected>Sedang</option>
+        <option value="large">Besar</option>
+      </select>
+    </label>
+
+    <label>Tambah Furnitur:
+      <input type="text" id="custom-emoji" placeholder="🛁, 🚪, 🛎️..." maxlength="2">
+      <button onclick="addCustomItem()">➕</button>
+    </label>
+
+    <button onclick="saveDesign()">💾 Simpan</button>
+    <button onclick="loadDesign()">📂 Muat</button>
+    <button onclick="downloadImage()">🖼️ Export</button>
+  </div>
+
+  <div class="container">
+    <div class="toolbar" id="toolbar">
+      <div class="item" draggable="true" data-type="sofa">🛋️</div>
+      <div class="item" draggable="true" data-type="bed">🛏️</div>
+      <div class="item" draggable="true" data-type="table">🪑</div>
+      <div class="item" draggable="true" data-type="plant">🪴</div>
+    </div>
+
+    <div id="canvas" class="canvas medium" ondrop="drop(event)" ondragover="allowDrop(event)" ondblclick="addLabel(event)">
+      <div class="grid"></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

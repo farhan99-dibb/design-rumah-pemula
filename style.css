@@ -1,0 +1,81 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f0f0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.controls {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.controls select, .controls input, .controls button {
+  padding: 8px;
+  margin: 5px;
+  font-size: 16px;
+}
+
+.container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.toolbar {
+  width: 150px;
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+}
+
+.item {
+  background: #eee;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+  cursor: grab;
+  border-radius: 5px;
+  position: relative;
+}
+
+.canvas {
+  background: #fff;
+  border: 2px solid #ccc;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.canvas.small { width: 300px; height: 300px; }
+.canvas.medium { width: 500px; height: 400px; }
+.canvas.large { width: 700px; height: 500px; }
+
+.grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: 20px 20px;
+  background-image:
+    linear-gradient(to right, #e0e0e0 1px, transparent 1px),
+    linear-gradient(to bottom, #e0e0e0 1px, transparent 1px);
+  z-index: 0;
+}
+
+.label {
+  position: absolute;
+  font-weight: bold;
+  color: #000;
+  background: #ffffaa;
+  padding: 2px 6px;
+  border-radius: 4px;
+  cursor: move;
+}
